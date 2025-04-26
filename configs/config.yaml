@@ -1,0 +1,48 @@
+# Crest Configuration
+
+# Flight server configuration
+flight:
+  # List of Flight server addresses
+  servers:
+    - localhost:8815
+  # Default port for Flight servers
+  port: 8815
+
+# Iceberg configuration
+iceberg:
+  # Default namespace for Iceberg tables
+  defaultNamespace: default
+
+# Storage configuration
+storage:
+  # Storage type (local, s3)
+  type: local
+  # Local path for storage
+  localPath: data
+  # S3 bucket (for S3 storage)
+  s3Bucket: crest-data
+  # S3 region (for S3 storage)
+  s3Region: us-west-2
+
+# Batching configuration
+batching:
+  # Maximum number of rows to process in a batch
+  maxRows: 1000
+  # Maximum time window to wait before processing a batch (in seconds)
+  maxTimeWindow: 60s
+
+# Catalog configuration (Lakekeeper)
+catalog:
+  # Lakekeeper REST endpoint
+  endpoint: http://localhost:8080
+  # Catalog type
+  type: rest
+  # Warehouse location
+  warehouse: file:///tmp/warehouse
+
+# Metrics configuration
+metrics:
+  # Whether to collect metrics
+  enabled: true
+  # Path to store metrics
+  collectionPath: metrics
